@@ -1,0 +1,82 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Container */
+  .add-event-container {
+    width: 700px;
+    margin: 50px auto;
+    padding: 50px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading */
+  h2 {
+    color: #1a237e;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #1a237e;
+    outline: none;
+  }
+  
+  /* Button */
+  .eventsubmitbutton {
+    padding: 12px;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+    width: 600px;
+  }
+  
+  .eventsubmitbutton:hover {
+    background-color: #0d1542;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .add-event-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    input,
+    textarea,
+    button {
+      font-size: 14px;
+    }
+  }
+  

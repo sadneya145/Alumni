@@ -1,0 +1,134 @@
+/* Main container layout */
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* Left and Right layout */
+.left-section {
+  flex: 3;
+  min-width: 700px;
+}
+
+.right-section {
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
+  position: sticky;
+  top: 20px;
+}
+
+/* Filter bar - responsive & centered */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  border-radius: 12px;
+  margin: 20px auto 35px auto;
+  gap: 10px;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  padding: 10px;
+}
+
+/* Input styles */
+.filter-input,
+.filter-dropdown {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  width: 180px;
+  min-width: 150px;
+}
+
+.filter-reset-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.filter-reset-btn:hover {
+  background-color: #e4e4e4;
+}
+
+/* People list grid */
+.people-list-searchPeople {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Card styling */
+.person-card-searchPeople {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #858383;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar image */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Description text */
+.desc {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Person title */
+.search-people-container h2 {
+  color: #111;
+}
+
+/* Button container */
+.person-actions-searchPeople {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.connect-btn, .message-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.connect-btn {
+  background-color: #c62828;
+  color: white;
+}
+
+.message-btn {
+  background-color: transparent;
+  border: 1px solid #c62828;
+  color: #c62828;
+}

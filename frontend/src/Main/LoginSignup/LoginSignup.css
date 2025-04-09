@@ -1,0 +1,148 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background: rgb(45, 43, 41); dark background */
+  background-color: rgb(241,241,239);
+}
+
+.auth-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 0 20px rgba(243, 224, 171, 0.3);
+  position: relative;
+  border: #333 12px;
+  max-height: 800px;
+}
+
+.role-switcher {
+  display: flex;
+  position: relative;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.role-option {
+  flex: 1;
+  text-align: center;
+  padding: 0.7rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+  background-color: #f9f9f9;
+  transition: background 0.3s ease;
+}
+
+.role-option.active {
+  color: white;
+  background-color: #ac3032;
+}
+
+.slider {
+  position: absolute;
+  bottom: 0;
+  width: 33.33%;
+  height: 4px;
+  background: rgb(233, 184, 44);
+  transition: left 0.3s ease;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  font-weight: bold;
+  margin-top: 5px;
+  color: #333;
+  text-align: left;
+}
+
+input {
+  padding: 0.6rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: rgb(233, 184, 44);
+  outline: none;
+}
+
+.submit-btn {
+  padding: 0.8rem;
+  background: #ac3032;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: rgb(233, 184, 44);
+  color: rgb(45, 43, 41);
+}
+
+.google-btn {
+  margin-top: 1rem;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.google-btn:hover {
+  box-shadow: 0 0 8px rgba(233, 184, 44, 0.4);
+}
+
+.google-logo {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.alternate {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.alternate a {
+  color: #ac3032;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.alternate a:hover {
+  color: rgb(233, 184, 44);
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+
+.form-container h2{
+    color: rgb(45, 43, 41);
+}

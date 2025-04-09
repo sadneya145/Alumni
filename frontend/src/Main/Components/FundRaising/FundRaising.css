@@ -1,0 +1,138 @@
+.fundraising-wrapper {
+  padding: 50px 20px;
+  background-color: rgb(241, 241, 239);
+  color: rgb(45, 43, 41);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.fundraising-form-container {
+  background-color: #fff;
+  border: 2px solid #ac3032;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+  box-shadow: 0 4px 20px rgba(233, 184, 44, 0.2);
+}
+
+.fundraising-form-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ac3032;
+  text-align: center;
+}
+
+.fundraising-form-container input,
+.fundraising-form-container textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.fundraising-form-container input:focus,
+.fundraising-form-container textarea:focus {
+  border-color: rgb(233, 184, 44);
+  outline: none;
+}
+
+.fundraising-form-container button {
+  background-color: #ac3032;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.fundraising-form-container button:hover {
+  background-color: rgb(233, 184, 44);
+  color: rgb(45, 43, 41);
+}
+
+.fundraising-projects {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.fundraising-projects h2 {
+  font-size: 26px;
+  color: #ac3032;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.no-projects {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-left: 5px solid #ac3032;
+  padding: 20px;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(243, 224, 171, 0.2);
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 16px rgba(233, 184, 44, 0.2);
+}
+
+.project-card h3 {
+  color: #ac3032;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 14px;
+  color: rgb(45, 43, 41);
+  line-height: 1.6;
+}
+
+.role-switcher {
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.role-option {
+  flex: 1;
+  text-align: center;
+  padding: 0.7rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+  background-color: #f9f9f9;
+  transition: background 0.3s ease;
+}
+
+.role-option.active {
+  color: white;
+  background-color: #ac3032;
+}

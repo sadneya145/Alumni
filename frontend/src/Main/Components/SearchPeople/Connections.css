@@ -1,0 +1,59 @@
+.connections-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #adacac;
+  width: 300px;
+}
+
+.connection-card {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.conn-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.conn-details {
+  flex: 1;
+}
+
+.conn-details p {
+  margin: 3px 0;
+  color: #555;
+  font-size: 14px;
+  text-align: left;
+}
+
+.conn-details strong {
+  display: block;
+  /* margin-bottom: 5px; */
+  text-align: left;
+  color: #d32f2f;
+}
+
+.conn-message-btn {
+  margin-top: 8px;
+  padding: 6px 14px;
+  border: 1px solid #c62828;
+  background: none;
+  color: #c62828;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.conn-message-btn i {
+  margin-right: 6px;
+}
