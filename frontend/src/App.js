@@ -30,6 +30,8 @@ import EventParticipation from "./Main/Components/Event/EventParticipation";
 import Chatbot from "./Main/Chatbot/Chatbot";
 import SearchPeople from "./Main/Components/SearchPeople/SearchPeople";
 import DiscussionPage from "./Main/Components/DiscussionPage/DiscussionPage";
+import PeopleProfile from "./Main/Components/SearchPeople/PeopleProfile"
+import ChatBox from "./Main/Components/SearchPeople/ChatBox";
 
 function App() {
   const location = useLocation();
@@ -82,6 +84,8 @@ function App() {
                 <Route path="/home/events" element={<EventParticipation/>} />
                 <Route path="/home/search-people" element={<SearchPeople/>} />
                 <Route path="/home/discussionPage" element={<DiscussionPage/>} />
+                <Route path="/profile/:email" element={<PeopleProfile/>} />
+                <Route path="/home/message" element={<ChatBox />} />
               </Routes>
               <Chatbot/>
             </>

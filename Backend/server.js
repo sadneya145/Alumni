@@ -1,3 +1,4 @@
+// tbzt ehwi tbnx jncf password
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -36,46 +37,100 @@ mongoose
 
 // Define User Schema
 const userSchema = new mongoose.Schema({
-  name: {type: String, required: true},
-  email: {type: String, required: true, unique: true},
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
   role: {
     type: String,
     enum: ['Student', 'Alumni', 'Organization', 'admin'],
     required: true,
   },
-  verified: {type: Boolean, default: false}, // new field for admin verification
-  createdAt: {type: Date, default: Date.now},
+  verified: { type: Boolean, default: false }, // Admin verified
+  isEmailVerified: { type: Boolean, default: false }, // Email verified
+  emailToken: { type: String },
+  createdAt: { type: Date, default: Date.now },
 });
+
 
 // Create User Model
 const User = mongoose.model('User', userSchema);
 
-// API Routes
+
+
 app.post('/api/users', async (req, res) => {
-  const {name, email, role} = req.body;
+  const { name, email, role } = req.body;
 
   if (!name || !email || !role) {
-    return res.status(400).json({message: 'All fields (name, email, role) are required'});
+    return res.status(400).json({ message: 'All fields required' });
   }
 
   if (!['Student', 'Alumni', 'Organization'].includes(role)) {
-    return res.status(403).json({message: 'Only Student, Alumni, and Organization roles are allowed to sign up directly'});
+    return res.status(403).json({ message: 'Only Student, Alumni, and Organization roles are allowed' });
   }
 
   try {
-    const existingUser = await User.findOne({email});
+    const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({message: 'User already exists'});
+      return res.status(400).json({ message: 'User already exists' });
     }
 
-    const newUser = new User({name, email, role});
+    const emailToken = crypto.randomBytes(32).toString('hex');
+
+    const newUser = new User({ name, email, role, emailToken });
     await newUser.save();
 
-    res.status(201).json({message: 'Signup successful. Awaiting admin verification.', user: newUser});
+    // Send verification email
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'sadneyasam05@gmail.com',
+        pass: 'tbzt ehwi tbnx jncf', // use env variable or App Password
+        
+      },
+    });
+
+    const url = `http://localhost:5000/api/verify-email/${emailToken}`;
+
+    await transporter.sendMail({
+      from: 'your.email@gmail.com',
+      to: newUser.email,
+      subject: 'Verify your email',
+      html: `<p>Hi ${name},</p>
+             <p>Please click the link below to verify your email:</p>
+             <a href="${url}">${url}</a>`,
+    });
+
+    res.status(201).json({ message: 'Signup successful. Please verify your email.' });
   } catch (err) {
-    res.status(500).json({message: 'Internal server error'});
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+// API Routes
+// app.post('/api/users', async (req, res) => {
+//   const {name, email, role} = req.body;
+
+//   if (!name || !email || !role) {
+//     return res.status(400).json({message: 'All fields (name, email, role) are required'});
+//   }
+
+//   if (!['Student', 'Alumni', 'Organization'].includes(role)) {
+//     return res.status(403).json({message: 'Only Student, Alumni, and Organization roles are allowed to sign up directly'});
+//   }
+
+//   try {
+//     const existingUser = await User.findOne({email});
+//     if (existingUser) {
+//       return res.status(400).json({message: 'User already exists'});
+//     }
+
+//     const newUser = new User({name, email, role});
+//     await newUser.save();
+
+//     res.status(201).json({message: 'Signup successful. Awaiting admin verification.', user: newUser});
+//   } catch (err) {
+//     res.status(500).json({message: 'Internal server error'});
+//   }
+// });
 
 app.patch('/api/users/verify/:email', async (req, res) => {
   const {adminEmail} = req.body;
@@ -110,6 +165,40 @@ app.get('/api/users', async (req, res) => {
   } catch (err) {
     res.status(500).json({message: 'Internal server error'});
   }
+});
+
+app.get('/api/verify-email/:token', async (req, res) => {
+  const { token } = req.params;
+
+  try {
+    const user = await User.findOne({ emailToken: token });
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid token' });
+    }
+
+    user.isEmailVerified = true;
+    user.emailToken = null;
+    await user.save();
+
+    res.send('<h2>Email verified successfully! 😊</h2>');
+  } catch (err) {
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+app.post('/api/login', async (req, res) => {
+  const { email } = req.body;
+
+  const user = await User.findOne({ email });
+  if (!user) {
+    return res.status(400).json({ message: 'User not found' });
+  }
+
+  if (!user.isEmailVerified) {
+    return res.status(403).json({ message: 'Please verify your email to login' });
+  }
+
+  res.status(200).json({ message: 'Login successful', user });
 });
 
 

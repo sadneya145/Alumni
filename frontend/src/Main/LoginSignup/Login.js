@@ -30,6 +30,15 @@ const Login = () => {
       return;
     }
 
+    if (activeRole === 'Alumni') {
+      const verifiedAlumni = await verifyAlumni(email);
+      if (!verifiedAlumni) {
+        setError('Email not found in alumni records.');
+        return;
+      }
+      localStorage.setItem('alumniName', verifiedAlumni.Name);
+    }
+
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -38,6 +47,7 @@ const Login = () => {
       );
       const firebaseUser = userCredential.user;
 
+      // ✅ Connect with backend to get user info
       const response = await axios.get(
         `http://localhost:5000/api/users/${firebaseUser.email}`
       );
@@ -47,7 +57,24 @@ const Login = () => {
       localStorage.setItem('name', userData.name);
       navigate('/home');
     } catch (err) {
+      console.error(err);
       setError('Login failed. Please check your credentials.');
+    }
+  };
+
+  // ✅ Alumni verification from Google Sheet
+  const verifyAlumni = async email => {
+    try {
+      const res = await axios.get(
+        'https://opensheet.vercel.app/15R-tU7kAPUd7eGGLHKQogVjJWefMsKuScVipSmL5G7Y/Sheet1'
+      );
+      const alumniList = res.data;
+      return alumniList.find(
+        alum => alum.Email?.toLowerCase() === email.toLowerCase()
+      );
+    } catch (error) {
+      console.error('Failed to verify alumni', error);
+      return null;
     }
   };
 
