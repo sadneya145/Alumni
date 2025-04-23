@@ -1,0 +1,424 @@
+/* Chat Section Styling - Enhanced Look with Red Theme */
+.home-container-m {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.chat-container-m {
+  max-width: 600px;
+  width: 95%;
+  padding: 40px 30px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.15);
+  transition: all 0.3s ease-in-out;
+  margin: 40px auto;
+  border-top: 4px solid #dc2626;
+  position: relative;
+  left: 0;
+  transform: none;
+  box-sizing: border-box; /* Include padding in width/height calculations */
+  /* Remove overflow: hidden to prevent content cutting off */
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #dc2626;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title svg {
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Login Container with Centered Button */
+.login-container-m-chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.login-container-chat input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1.5px solid #f1a9a9;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.login-container-chat input:focus {
+  border-color: #dc2626;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1);
+}
+
+/* Scoped Buttons - Red Theme */
+.chat-container button,
+.login-container-chat button,
+.room_chat button,
+.room-input-container button,
+.message-form button {
+  padding: 12px 20px;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+
+.chat-container button:hover,
+.login-container-chat button:hover,
+.room_chat button:hover,
+.room-input-container button:hover,
+.message-form button:hover {
+  background-color: #b91c1c;
+}
+
+/* Room and Dropdown */
+.room_chat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.join-room-button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.room-input-container {
+  margin: 20px 0 15px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.room-input-container input {
+  width: 100%;
+  padding: 14px;
+  border: 1.5px solid #f1a9a9;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.room-input-container input:focus {
+  border-color: #dc2626;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1);
+}
+
+.dropdown-button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 8px;
+  margin-left: 8px;
+  font-size: 14px;
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #f1a9a9;
+  border-radius: 8px;
+  z-index: 1000;
+  list-style: none;
+  padding: 8px;
+  margin-top: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.2s ease forwards;
+  box-sizing: border-box;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-menu li {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background: #fff1f1;
+  color: #dc2626;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Message Container Wrapper */
+.message-container-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  /* Add height control */
+  max-height: 600px; /* Increased from original fixed height */
+  overflow-y: auto;
+}
+
+/* Message Bubbles - Fixed overflow issues */
+.message-container {
+  list-style: none;
+  padding: 15px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Change from fixed height to min-height */
+  min-height: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #f1a9a9;
+  border-radius: 8px;
+  background-color: #fffafa;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.message-container::-webkit-scrollbar-thumb {
+  background-color: #f1a9a9;
+  border-radius: 10px;
+}
+
+.message-container li {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.message {
+  max-width: 75%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  font-size: 15px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.left {
+  align-self: flex-start;
+  background-color: #f9f9f9;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.right {
+  align-self: flex-end;
+  background-color: #ffebeb;
+  color: #9b1c1c;
+  border-bottom-right-radius: 4px;
+}
+
+.message.read {
+  position: relative;
+}
+
+.message.read::after {
+  content: "✓";
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  font-size: 12px;
+  color: #dc2626;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 6px;
+  display: block;
+}
+
+.empty-messages {
+  text-align: center;
+  color: #6b7280;
+  width: 100%;
+  padding: 20px 0;
+  margin: auto;
+}
+
+/* Typing Indicator */
+.typing {
+  font-style: italic;
+  color: #dc2626;
+  text-align: center;
+  margin: 10px 0;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Message Input */
+.message-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message-form input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1.5px solid #f1a9a9;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.message-form input:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1);
+}
+
+.message-form button {
+  background-color: #dc2626;
+  font-size: 15px;
+  padding: 14px 22px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Clients Total Text */
+.clients-total {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  background-color: #fff1f1;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+/* Main container layout */
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.name {
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.name-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1.5px solid #f1a9a9;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #dc2626;
+  box-sizing: border-box;
+}
+
+/* Ensure elements stay centered regardless of screen size */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 90%;
+    padding: 30px 20px;
+    margin: 20px auto;
+    /* Ensure container expands with content */
+    height: auto;
+    min-height: 500px;
+  }
+  
+  .message-container {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-container {
+    width: 95%;
+    padding: 20px 15px;
+    /* Ensure container expands with content */
+    height: auto;
+  }
+  
+  .message-form {
+    flex-direction: column;
+  }
+  
+  .message-form input {
+    width: 100%;
+  }
+  
+  .message-form button {
+    width: 100%;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  /* Add this to ensure the main container expands */
+  min-height: fit-content;
+}

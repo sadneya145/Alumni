@@ -5,6 +5,7 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import { QRCodeCanvas } from 'qrcode.react';
 import jsPDF from 'jspdf';
+import eventlogo from '../../../asset/eventlogo.png'
 
 const EventParticipation = () => {
   const [events, setEvents] = useState([]);
@@ -116,7 +117,7 @@ const EventParticipation = () => {
             filteredEvents.map((event, index) => (
               <div className="event-card" key={event._id}>
                 <img
-                  src={event.imageUrl || 'https://via.placeholder.com/150'}
+                  src={event.imageUrl || eventlogo}
                   alt={event.title}
                 />
                 <div className="event-info">

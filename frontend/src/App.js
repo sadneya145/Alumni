@@ -32,6 +32,11 @@ import SearchPeople from "./Main/Components/SearchPeople/SearchPeople";
 import DiscussionPage from "./Main/Components/DiscussionPage/DiscussionPage";
 import PeopleProfile from "./Main/Components/SearchPeople/PeopleProfile"
 import ChatBox from "./Main/Components/SearchPeople/ChatBox";
+import Profile from "./Main/Components/Profile/Profile";
+import JobBoard from "./Main/Components/JobBoard/JobBoard";
+import VideoCall from "./Main/Components/VideoCall/Screens/Lobby";
+import Room from "./Main/Components/VideoCall/Screens/Room";
+import Message from "./Main/Components/Message/Message";
 
 function App() {
   const location = useLocation();
@@ -86,6 +91,11 @@ function App() {
                 <Route path="/home/discussionPage" element={<DiscussionPage/>} />
                 <Route path="/profile/:email" element={<PeopleProfile/>} />
                 <Route path="/home/message" element={<ChatBox />} />
+                <Route path="/home/profile" element={<Profile />} />
+                <Route path="/home/jobboard" element={<JobBoard />} />
+                <Route path="/video_call" element={<VideoCall />} />
+                <Route path="/video_call/room/:roomId" element={<Room />} />
+                <Route path="/messages" element={<Message />} />
               </Routes>
               <Chatbot/>
             </>

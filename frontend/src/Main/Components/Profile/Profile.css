@@ -1,0 +1,480 @@
+.profile-wrapper {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f1ef;
+    color: #2d2b29;
+    min-height: 100vh;
+  }
+  
+  .profile-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  /* Profile Header */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-header:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .profile-image-container {
+    margin-right: 30px;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ac3032;
+    box-shadow: 0 4px 15px rgba(172, 48, 50, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .profile-info {
+    flex-grow: 1;
+  }
+  
+  .profile-name {
+    font-size: 32px;
+    color: #222;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  .profile-details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .profile-label {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  .profile-dot {
+    color: #ac3032;
+    font-size: 18px;
+  }
+  
+  .profile-points {
+    text-align: center;
+  }
+  
+  .points-box {
+    background-color: #f7e3e3;
+    padding: 15px 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e8c5c5;
+    transition: transform 0.3s ease;
+  }
+  
+  .points-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .points-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ac3032;
+  }
+  
+  .points-label {
+    font-size: 16px;
+    color: #ac3032;
+    font-weight: 500;
+  }
+  
+  /* Profile Stats */
+  .profile-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+  
+  .stat-box {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stat-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    border-radius: 50%;
+    background-color: #fdf0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(172, 48, 50, 0.2);
+  }
+  
+  .book-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ac3032'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'/%3E%3C/svg%3E");
+  }
+  
+  .briefcase-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ac3032'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'/%3E%3C/svg%3E");
+  }
+  
+  .shield-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ac3032'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'/%3E%3C/svg%3E");
+  }
+  
+  .users-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ac3032'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'/%3E%3C/svg%3E");
+  }
+  
+  .star-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ac3032'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z'/%3E%3C/svg%3E");
+  }
+  
+  .calendar-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ac3032'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3E%3C/svg%3E");
+  }
+  
+  .stat-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ac3032;
+    margin: 10px 0;
+  }
+  
+  .stat-label {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  /* Section Styling */
+  .profile-section {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-section:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .section-title {
+    font-size: 28px;
+    color: #ac3032;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f7e3e3;
+    position: relative;
+    font-weight: 600;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background-color: #ac3032;
+  }
+  
+  /* Achievements Section */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  .achievement-box {
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #f7e3e3;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .achievement-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #e8c5c5;
+    background-color: #fff;
+  }
+  
+  .achievement-icon {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    background-color: #f7e3e3;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(172, 48, 50, 0.2);
+  }
+  
+  .achievement-content h3 {
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    color: #222;
+    font-weight: 600;
+  }
+  
+  .achievement-content p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* Activity Section */
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .activity-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #f7e3e3;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .activity-item.highlighted {
+    background-color: #fdf0f0;
+    border-color: #e8c5c5;
+  }
+  
+  .activity-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .activity-icon {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    background-color: #f7e3e3;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(172, 48, 50, 0.2);
+  }
+  
+  .activity-item.highlighted .activity-icon {
+    background-color: #ffdbdb;
+    box-shadow: 0 4px 10px rgba(172, 48, 50, 0.2);
+  }
+  
+  .activity-content {
+    flex-grow: 1;
+  }
+  
+  .activity-content h3 {
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    color: #222;
+    font-weight: 600;
+  }
+  
+  .activity-content p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .activity-points {
+    margin-left: 20px;
+  }
+  
+  .points-badge {
+    background-color: #f7e3e3;
+    color: #ac3032;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 2px 10px rgba(172, 48, 50, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .points-badge:hover {
+    transform: scale(1.05);
+  }
+  
+  .activity-item.highlighted .points-badge {
+    background-color: #ffdbdb;
+    color: #ac3032;
+    box-shadow: 0 2px 10px rgba(172, 48, 50, 0.15);
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .profile-header,
+  .stat-box,
+  .profile-section {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .stat-box:nth-child(1) { animation-delay: 0.1s; }
+  .stat-box:nth-child(2) { animation-delay: 0.2s; }
+  .stat-box:nth-child(3) { animation-delay: 0.3s; }
+  .stat-box:nth-child(4) { animation-delay: 0.4s; }
+  
+  .achievement-box:nth-child(1) { animation-delay: 0.1s; }
+  .achievement-box:nth-child(2) { animation-delay: 0.2s; }
+  .achievement-box:nth-child(3) { animation-delay: 0.3s; }
+  
+  .activity-item:nth-child(1) { animation-delay: 0.1s; }
+  .activity-item:nth-child(2) { animation-delay: 0.2s; }
+  .activity-item:nth-child(3) { animation-delay: 0.3s; }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1100px) {
+    .profile-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .achievements-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .profile-container {
+      padding: 20px 15px;
+    }
+  
+    .profile-header {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .profile-image-container {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    
+    .profile-details {
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  
+    .profile-name {
+      font-size: 26px;
+      text-align: center; /* Center align on mobile view */
+    }
+    
+    .profile-section {
+      padding: 20px;
+    }
+    
+    .section-title {
+      font-size: 24px;
+    }
+    
+    .achievements-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .activity-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .activity-icon {
+      margin-bottom: 15px;
+    }
+    
+    .activity-points {
+      margin-left: 0;
+      margin-top: 15px;
+      align-self: flex-start;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .profile-stats {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    
+    .stat-box {
+      padding: 15px;
+    }
+    
+    .stat-value {
+      font-size: 28px;
+    }
+    
+    .profile-name {
+      font-size: 22px;
+    }
+    
+    .points-value {
+      font-size: 28px;
+    }
+  }
