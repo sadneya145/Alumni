@@ -37,6 +37,8 @@ import JobBoard from "./Main/Components/JobBoard/JobBoard";
 import VideoCall from "./Main/Components/VideoCall/Screens/Lobby";
 import Room from "./Main/Components/VideoCall/Screens/Room";
 import Message from "./Main/Components/Message/Message";
+import StaffProfiles from "./Main/Components/SearchPeople/staffSpy";
+import NewJobs from "./Main/Components/JobBoard/NewJobs"
 
 function App() {
   const location = useLocation();
@@ -92,7 +94,9 @@ function App() {
                 <Route path="/profile/:email" element={<PeopleProfile/>} />
                 <Route path="/home/message" element={<ChatBox />} />
                 <Route path="/home/profile" element={<Profile />} />
-                <Route path="/home/jobboard" element={<JobBoard />} />
+                <Route path="/home/career-support/jobboard" element={<JobBoard />} />
+                <Route path="/home/career-support/profiles" element={<StaffProfiles/>}/>
+                <Route path="/home/career-support/newJobsPosted" element={<NewJobs/>}/>
                 <Route path="/video_call" element={<VideoCall />} />
                 <Route path="/video_call/room/:roomId" element={<Room />} />
                 <Route path="/messages" element={<Message />} />

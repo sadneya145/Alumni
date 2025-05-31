@@ -1,0 +1,83 @@
+/* FrontPage.css */
+
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgb(241, 241, 239);
+  color: rgb(45, 43, 41);
+} */
+
+.page-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.job-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  transition: box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.job-title {
+  font-size: 20px;
+  color: #ac3032;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.company-name {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.job-location {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.job-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.job-link {
+  color: rgb(233, 184, 44);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.job-link:hover {
+  text-decoration: underline;
+}
+
+.remote-badge {
+  background-color: #ac3032;
+  color: white;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}

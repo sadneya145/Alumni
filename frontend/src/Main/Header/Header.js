@@ -69,7 +69,7 @@ const Header = () => {
             <a href="/home/alumni-directory">Alumni Directory ▾</a>
           </li>
           <li>
-            <a href="/home/career-support">Career Support ▾</a>
+            <a href="/home/career-support/profiles">Career Support ▾</a>
           </li>
           <li>
             <a href="/home/mentorship">Mentorship Program</a>
@@ -84,7 +84,7 @@ const Header = () => {
             <a href="/video_call">Live Connect</a>
           </li>
           <li>
-            <a href="/home/jobboard">Job Opportunities</a>
+            <a href="/home/career-support/jobboard">Job Opportunities</a>
           </li>
           <li>
             <a href="/home/discussionPage">Forum Discussions</a>
