@@ -147,7 +147,7 @@ const Signup = () => {
           </form>
 
           <p className="alternate">
-            Already a member? <a href="/">Log in</a>
+            Already a member? <a href="/login">Log in</a>
           </p>
 
           <hr />
