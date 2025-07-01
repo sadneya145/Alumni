@@ -19,7 +19,7 @@ const Header = () => {
     <header className="header">
       <div className="top-bar">
         <div className="logo">
-          <Link to="/home">
+          <Link to="/">
             <img
               src="https://vesit.ves.ac.in/navbar2024nobackground.png"
               alt="VES Logo"
@@ -90,7 +90,7 @@ const Header = () => {
             <a href="/home/discussionPage">Forum Discussions</a>
           </li>
           <li>
-            <a href="/home">About Our Network</a>
+            <a href="/">About Our Network</a>
           </li>
         </ul>
       </nav>
