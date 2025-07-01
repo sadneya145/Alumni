@@ -84,9 +84,9 @@ function App() {
             // Public User Routes (No Sidebar)
             <>
               <Routes>
-                <Route path="/" element={<Login />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/home/fundRaising" element={<FundRaising />} />
                 <Route path="/home/events" element={<EventParticipation/>} />
                 <Route path="/home/search-people" element={<SearchPeople/>} />
